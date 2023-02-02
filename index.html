@@ -79,7 +79,7 @@
     }
 </style>
 <div class="container">
-    <h1 style="text-align:center;" class="title" onclick="document.location.reload()">Word Search</h1>
+    <h1 style="text-align:center;" class="title" onclick="logoClick()">Word Search</h1>
     <form name="wordsub">
         <input placeholder="Search Word" name="wor">
     </form>
@@ -357,6 +357,11 @@
     }
 
     randomWord();
+
+    function logoClick(){
+        history.pushState(history.state, document.title, window.location.href.split("?")[0])
+        window.location.reload()
+    }
 
     document.forms['wordsub'].onsubmit = () => {
         event.preventDefault()
