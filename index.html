@@ -29,8 +29,11 @@
     .button-group{
         display: flex;
         width: 100%;
+        align-content: center;
+        justify-content: center;
+        margin-bottom: 20px;
     }
-    .button-group > button{
+    /*.button-group > button{
         flex: 1 0 0;
     }
     .button-group > button:first-child{
@@ -38,7 +41,7 @@
     }
     .button-group > button:last-child{
         margin-left: 3px;
-    }
+    }*/
     input{
         width: 100%;
         display: block;
@@ -55,7 +58,7 @@
         max-width: 500px;
         display: block;
         margin: 0 auto;
-        margin-top: 10px!important;
+        margin-top: 50px!important;
     }
     .res{
         padding-left: 3px;
@@ -89,10 +92,11 @@
     }
     .title{
         transition-duration: 0.25s;
+        margin-right: 10px;
     }
     .title:hover{
         cursor: pointer;
-        letter-spacing: 5px;
+        font-weight: 800;
     }
     #co{
         font-size: 13px;
@@ -108,18 +112,36 @@
     }
     .form{
         display: flex;
+        margin-bottom: 6px;
+    }
+    .s-ico{
+        padding: 0 15px;
+        border-radius: 0 6px 6px 0;
+    }
+    .randw{
+        padding: 0 15px;
+        border-radius: 0;
+    }
+    .form>input{
+        border-radius: 6px 0 0 6px;
+    }
+    .nav{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
     }
 </style>
 <div class="container">
-    <button onclick="toggleTheme()" class="theme-ico"><i class="fad fa-sun" id="ti"></i></button>
-    <h1 style="text-align:center;" class="title" onclick="logoClick()">Word Search</h1>
+    <div class="nav">
+        <h1 style="text-align:center;" class="title" onclick="logoClick()">Word Search</h1>
+        <button onclick="toggleTheme()" class="theme-ico"><i class="fad fa-sun" id="ti"></i></button>
+    </div>
     <form name="wordsub" class="form">
         <input placeholder="Search Word" name="wor">
+        <button onclick="randomWord()" class="randw" type="button"><i class="fad fa-sync"></i></button>
+        <button class="s-ico" type="submit"><i class="fad fa-search"></i></button>
     </form>
-    <div class="button-group">
-        <button onclick="document.forms['wordsub'].onsubmit()" id="se">Search</button>
-        <button onclick="randomWord()">Random Word</button>
-    </div>
     <h3 id="co"></h3>
     <div id="define"></div>
 </div>
