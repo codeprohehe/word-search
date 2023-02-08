@@ -60,7 +60,6 @@
     .res{
         padding-left: 3px;
         border-left: 3px solid lightgray;
- 
         background-color: var(--light-pri);
         margin-bottom: 5px;
         transition-duration: 0.25s;
@@ -107,11 +106,14 @@
         align-content: center;
         justify-content: center;
     }
+    .form{
+        display: flex;
+    }
 </style>
 <div class="container">
     <button onclick="toggleTheme()" class="theme-ico"><i class="fad fa-sun" id="ti"></i></button>
     <h1 style="text-align:center;" class="title" onclick="logoClick()">Word Search</h1>
-    <form name="wordsub">
+    <form name="wordsub" class="form">
         <input placeholder="Search Word" name="wor">
     </form>
     <div class="button-group">
