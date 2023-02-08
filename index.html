@@ -1,6 +1,7 @@
 <html data-theme="dark">
 <head>
     <title>Word Search</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.1/css/all.css" data-turbolinks-track="true" />
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -100,7 +101,7 @@
     }
 </style>
 <div class="container">
-    <button onclick="toggleTheme()">Theme</button>
+    <button onclick="toggleTheme()"><i class="fad fa-sun" id="ti"></i></button>
     <h1 style="text-align:center;" class="title" onclick="logoClick()">Word Search</h1>
     <form name="wordsub">
         <input placeholder="Search Word" name="wor">
@@ -426,6 +427,19 @@
         autoSearch(params.word)
     }
 
+    function themeIcon(){
+        const html = document.getElementsByTagName("html")[0]
+        const icon = document.querySelector("#ti")
+        switch(html.getAttribute("data-theme")){
+            case "dark":
+                icon.classList = "fad fa-sun"
+                break;
+            case "light":
+                icon.classList = "fad fa-moon"
+                break;
+        }
+    }
+
     function toggleTheme(){
         const html = document.getElementsByTagName("html")[0]
         switch(html.getAttribute("data-theme")){
@@ -438,6 +452,7 @@
                 localStorage.setItem("theme", "dark")
                 break;
         }
+        themeIcon()
     }
 
     function loadTheme(){
@@ -445,6 +460,7 @@
         const html = document.getElementsByTagName("html")[0]
         if(ye){
             html.setAttribute("data-theme", ye)
+            themeIcon()
         }
     }
 
