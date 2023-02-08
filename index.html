@@ -100,11 +100,16 @@
         color: var(--light-text);
     }
     #ti{
-        font-size: 15px;
+        font-size: 20px;
+    }
+    .theme-ico{
+        display: flex;
+        align-content: center;
+        justify-content: center;
     }
 </style>
 <div class="container">
-    <button onclick="toggleTheme()"><i class="fad fa-sun" id="ti"></i></button>
+    <button onclick="toggleTheme()" class="theme-ico"><i class="fad fa-sun" id="ti"></i></button>
     <h1 style="text-align:center;" class="title" onclick="logoClick()">Word Search</h1>
     <form name="wordsub">
         <input placeholder="Search Word" name="wor">
