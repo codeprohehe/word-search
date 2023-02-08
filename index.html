@@ -431,11 +431,23 @@
         switch(html.getAttribute("data-theme")){
             case "dark":
                 html.setAttribute("data-theme", "light")
+                localStorage.setItem("theme", "light")
                 break;
             case "light":
                 html.setAttribute("data-theme", "dark")
+                localStorage.setItem("theme", "dark")
                 break;
         }
     }
+
+    function loadTheme(){
+        const ye = localStorage.getItem("theme")
+        const html = document.getElementsByTagName("html")[0]
+        if(ye){
+            html.setAttribute("data-theme", ye)
+        }
+    }
+
+    loadTheme()
 </script>
 </html>
