@@ -100,6 +100,7 @@
     }
 </style>
 <div class="container">
+    <button onclick="toggleTheme()">Theme</button>
     <h1 style="text-align:center;" class="title" onclick="logoClick()">Word Search</h1>
     <form name="wordsub">
         <input placeholder="Search Word" name="wor">
@@ -423,6 +424,18 @@
 
     if(params.word){
         autoSearch(params.word)
+    }
+
+    function toggleTheme(){
+        const html = document.getElementsByTagName("html")
+        switch(html.getAttribute("data-theme")){
+            case "dark":
+                html.setAttribute("data-theme", "light")
+                break;
+            case "light":
+                html.setAttribute("data-theme", "dark")
+                break;
+        }
     }
 </script>
 </html>
