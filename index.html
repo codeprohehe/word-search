@@ -101,7 +101,8 @@
     }
     .title:hover{
         cursor: pointer;
-        text-transform: uppercase;
+        /*text-transform: uppercase;*/
+        transform: scale(1.2);
     }
     #co{
         font-size: 13px;
@@ -135,6 +136,16 @@
         width: 100%;
         align-items: center;
         justify-content: center;
+    }
+    @keyframes text-switch {
+        0%{
+            unicode-bidi: normal;
+            direction: ltr;
+        }
+        100%{
+            unicode-bidi:bidi-override;
+            direction:rtl;
+        }
     }
 </style>
 <div class="container">
