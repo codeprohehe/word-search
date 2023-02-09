@@ -62,7 +62,7 @@
     }
     .res{
         padding-left: 3px;
-        border-left: 3px solid lightgray;
+        border-left: 3px solid var(--light-pri);
         background-color: var(--light-pri);
         margin-bottom: 5px;
         transition-duration: 0.25s;
@@ -70,10 +70,12 @@
         padding-right: 2px;
         padding-top: 4px;
         padding-bottom: 4px;
+        transition: border-color 0.25s linear;
     }
     .res:hover{
         cursor: pointer;
         background-color: var(--light-sec);
+        border-color: lightgray!important;
     }
     button{
         cursor: pointer;
