@@ -71,14 +71,13 @@
         padding-top: 4px;
         padding-bottom: 4px;
         transition: border-color 0.25s linear;
-        cursor: none;
     }
     .res:hover{
         background-color: var(--light-sec);
         border-color: lightgray!important;
     }
     #define{
-        cursor: none;
+        
     }
     button{
         cursor: pointer;
@@ -98,6 +97,7 @@
     .title{
         transition-duration: 0.25s;
         margin-right: 10px;
+        margin-left: 10px;
     }
     .title:hover{
         cursor: pointer;
@@ -115,10 +115,10 @@
         display: flex;
         align-content: center;
         justify-content: center;
+        margin-right: 10px;
     }
     .form{
         display: flex;
-        margin-bottom: 6px;
     }
     .s-ico{
         padding: 0 15px;
@@ -135,7 +135,13 @@
         display: flex;
         width: 100%;
         align-items: center;
-        justify-content: center;
+    }
+    .nav>*{
+        flex: 0 0 auto;
+    }
+    .nav > form{
+        max-width: 500px;
+        flex: 1 0 0%;
     }
     @keyframes text-switch {
         0%{
@@ -148,16 +154,16 @@
         }
     }
 </style>
-<div class="container">
-    <div class="nav">
-        <h1 style="text-align:center;" class="title" onclick="logoClick()">Word Search</h1>
-        <button onclick="toggleTheme()" class="theme-ico"><i class="fad fa-sun" id="ti"></i></button>
-    </div>
+<div class="nav">
+    <h1 style="text-align:center;" class="title" onclick="logoClick()">Word Search</h1>
+    <button onclick="toggleTheme()" class="theme-ico"><i class="fad fa-sun" id="ti"></i></button>
     <form name="wordsub" class="form">
         <input placeholder="Search Word" name="wor">
         <button onclick="randomWord()" class="randw" type="button"><i class="fad fa-random"></i></button>
         <button class="s-ico" type="submit" id="se"><i class="fad fa-search"></i></button>
     </form>
+</div>
+<div class="container">
     <h3 id="co"></h3>
     <div id="define"></div>
 </div>
@@ -461,7 +467,7 @@
             //jsonr.results.definitione
         }).catch((e) => {
             console.log(e)
-            document.querySelector("#co").innerHTML = "No results!"
+            document.querySelector("#co").innerHTML = e//"No results!"
         })
     }
 
