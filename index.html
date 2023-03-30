@@ -76,9 +76,6 @@
         background-color: var(--light-sec);
         border-color: lightgray!important;
     }
-    #define{
-        
-    }
     button{
         cursor: pointer;
         border: none;
@@ -158,11 +155,13 @@
 <div class="nav">
     <h1 style="text-align:center;" class="title" onclick="logoClick()">Word Search</h1>
     <button onclick="toggleTheme()" class="theme-ico"><i class="fad fa-sun" id="ti"></i></button>
-    <form name="wordsub" class="form">
-        <input placeholder="Search Word" name="wor">
-        <button onclick="randomWord()" class="randw" type="button"><i class="fad fa-random"></i></button>
-        <button class="s-ico" type="submit" id="se"><i class="fad fa-search"></i></button>
-    </form>
+    <div>
+        <form name="wordsub" class="form">
+            <input placeholder="Search Word" name="wor">
+            <button onclick="randomWord()" class="randw" type="button"><i class="fad fa-random"></i></button>
+            <button class="s-ico" type="submit" id="se"><i class="fad fa-search"></i></button>
+        </form>
+    </div>
 </div>
 <div class="container">
     <h3 id="co"></h3>
