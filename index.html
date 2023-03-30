@@ -464,7 +464,7 @@
             document.querySelector("#co").innerHTML = "Found " + resCount + " results in " + seconds + " seconds for \""+word+"\""
             //history.pushState(window.location.href + "?word=" + word)
             history.pushState(history.state, document.title, window.location.href.split("?")[0] + "?word=" + word)
-            //jsonr.results.definitione
+            //jsonr.results.definitione 
         }).catch((e) => {
             console.log(e)
             document.querySelector("#co").innerHTML = e//"No results!"
